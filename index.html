@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng Báo Giá Group Toán Math THPTQG 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0c1a2e;
+            --text-color: #ffffff;
+            --text-muted: #b0c4de;
+            --primary-blue: #007bff;
+            --secondary-blue: #0d47a1;
+            --light-blue: #a0e0ff;
+            --highlight-green: #00e676;
+            --border-color: #2c3e50;
+            --card-bg: rgba(20, 35, 58, 0.85);
+            --header-bg: rgba(13, 33, 58, 0.9);
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            background-image: url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .rate-card-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: rgba(12, 26, 46, 0.95);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+            border: 1px solid var(--border-color);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .highlight-text {
+            color: var(--highlight-green);
+            font-weight: 700;
+        }
+
+        .highlight-bg {
+            background-color: var(--highlight-green);
+            color: #000;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-weight: 700;
+        }
+
+        .left-column {
+            display: grid;
+            grid-template-rows: auto auto auto auto;
+            gap: 25px;
+        }
+
+        .header-section {
+            display: flex;
+            align-items: center;
+            background-color: var(--header-bg);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .group-logo {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #0d47a1, #007bff);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 32px;
+            font-weight: 700;
+            margin-right: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-text h1 {
+            font-size: 22px;
+            text-transform: uppercase;
+            color: #fff;
+        }
+
+        .header-text p {
+            color: var(--text-muted);
+            font-size: 15px;
+            margin: 6px 0 0 0;
+            font-weight: 500;
+        }
+
+        .tagline {
+            font-size: 14px;
+            color: var(--highlight-green);
+            font-weight: 700;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 10px;
+            background: rgba(0, 230, 118, 0.1);
+            border-radius: 8px;
+            border: 1px dashed var(--highlight-green);
+        }
+
+        .overview-section {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 20px;
+        }
+
+        .overview-card,
+        .monthly-card {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .overview-card h3 {
+            font-size: 14px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .overview-card .member-count {
+            font-size: 42px;
+            font-weight: 700;
+            margin: 10px 0;
+            color: #fff;
+        }
+
+        .overview-card .member-count span {
+            color: var(--highlight-green);
+            font-size: 24px;
+            vertical-align: middle;
+        }
+
+        .overview-card .member-desc {
+            font-size: 15px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .monthly-card h4 {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .monthly-card .stat-line {
+            font-size: 15px;
+            margin: 8px 0;
+            font-weight: 500;
+        }
+
+        .monthly-card .stat-line .stat-type {
+            color: var(--text-muted);
+        }
+
+        .why-choose-section {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .why-choose-section h3 {
+            font-size: 16px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .why-choose-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .why-card {
+            display: flex;
+            align-items: center;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .why-card .icon-placeholder {
+            width: 45px;
+            height: 45px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            margin-right: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+        }
+
+        .golden-hours-section {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .golden-hours-section h3 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .golden-hours-section h3 span {
+            font-size: 13px;
+            color: var(--text-muted);
+            text-transform: none;
+            font-weight: 500;
+        }
+
+        .chart-simulation {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+
+        .chart-row {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
+            text-align: center;
+        }
+
+        .chart-bar-container {
+            height: 80px;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .chart-bar {
+            width: 100%;
+            background-color: rgba(0, 123, 255, 0.3);
+            border-radius: 4px 4px 0 0;
+            transition: height 0.3s ease;
+        }
+
+        .chart-bar.high {
+            background-color: var(--primary-blue);
+        }
+
+        .chart-bar.highest {
+            background-color: var(--highlight-green);
+        }
+
+        .chart-label {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        .golden-hours-highlights {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .golden-hours-highlights div {
+            margin-bottom: 8px;
+        }
+
+        .time-periods {
+            display: flex;
+            gap: 12px;
+            margin: 12px 0;
+        }
+
+        .time-period-box {
+            background-color: rgba(30, 58, 95, 0.6);
+            border: 1px solid #2c4a73;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
+        .right-column {
+            display: grid;
+            grid-template-rows: auto auto auto auto auto auto auto;
+            gap: 20px;
+        }
+
+        .right-column h2 {
+            font-size: 22px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .right-column h2 span {
+            font-size: 14px;
+            color: var(--text-muted);
+            text-transform: none;
+            font-weight: 500;
+            letter-spacing: 0;
+        }
+
+        .packages-section table,
+        .addons-section table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            /* Giảm font size một chút để chứa nhiều text hơn */
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .packages-section table th,
+        .addons-section table th {
+            background-color: rgba(26, 44, 78, 0.8);
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 2px solid var(--border-color);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .packages-section table td,
+        .addons-section table td {
+            padding: 15px;
+            border-bottom: 1px solid var(--border-color);
+            line-height: 1.6;
+            vertical-align: top;
+            /* Căn chữ lên đầu để dễ đọc */
+        }
+
+        .packages-section table tr:last-child td,
+        .addons-section table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .packages-section table td.price-cell,
+        .addons-section table td.price-cell {
+            color: var(--highlight-green);
+            font-weight: 700;
+            font-size: 16px;
+            white-space: nowrap;
+            /* Không xuống dòng cho số tiền */
+        }
+
+        .service-section-title {
+            font-size: 16px;
+            margin-bottom: 12px;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .discount-section {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+            margin-bottom: 5px;
+        }
+
+        .colab-section {
+            display: flex;
+            align-items: center;
+            background-color: rgba(30, 58, 95, 0.4);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px dashed #4a90e2;
+        }
+
+        .colab-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(0, 230, 118, 0.1);
+            color: var(--highlight-green);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 28px;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .colab-text h4 {
+            font-size: 15px;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .colab-text p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .contact-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            font-size: 14px;
+        }
+
+        .rules-card,
+        .booking-contact-card {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .rules-card h3 {
+            font-size: 15px;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .rules-card ul {
+            padding-left: 20px;
+            margin: 0;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .booking-contact-card {
+            background: linear-gradient(to right, rgba(20, 35, 58, 0.85), rgba(13, 71, 161, 0.2));
+        }
+
+        .booking-contact-card h4 {
+            font-size: 15px;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .booking-contact-card div {
+            margin: 8px 0;
+            color: var(--light-blue);
+            font-weight: 500;
+        }
+
+        .icon-graph::before {
+            content: "📈";
+        }
+
+        .icon-comments::before {
+            content: "💬";
+        }
+
+        .icon-likes::before {
+            content: "🎯";
+        }
+
+        .icon-posts::before {
+            content: "⚡";
+        }
+
+        .icon-time::before {
+            content: "⏱️";
+        }
+
+        .icon-colab::before {
+            content: "🤝";
+        }
+
+        /* Highlight tags in table */
+        .tag-admin {
+            background: rgba(0, 123, 255, 0.2);
+            color: #a0e0ff;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: bold;
+            border: 1px solid rgba(0, 123, 255, 0.5);
+        }
+
+        .tag-user {
+            background: rgba(255, 152, 0, 0.2);
+            color: #ffb74d;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: bold;
+            border: 1px solid rgba(255, 152, 0, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="rate-card-container">
+
+        <div class="left-column">
+
+            <div class="header-section">
+                <div class="group-logo">π</div>
+                <div class="header-text">
+                    <h1>RATE CARD QUẢNG CÁO & BOOKING PR</h1>
+                    <p>GROUP TOÁN MATH - HƯỚNG TỚI KÌ THI THPTQG 2026</p>
+                    <p>Quản trị viên: Nguyễn Vi Thái Sơn</p>
+                </div>
+            </div>
+
+            <div class="tagline">CỘNG ĐỒNG HỌC TẬP VÀ TRAO ĐỔI KIẾN THỨC TOÁN HỌC</div>
+
+            <div class="overview-section">
+                <div class="overview-card">
+                    <h3>MEMBER OVERVIEW</h3>
+                    <div class="member-count">306.100+ <span><span class="icon-graph"></span></span></div>
+                    <p class="member-desc">Thành viên</p>
+                </div>
+                <div class="monthly-card">
+                    <h4>TỔNG QUAN 5 THÁNG QUA</h4>
+                    <div class="stat-line"><span class="stat-type">Tương tác:</span> 3.672 Bình luận</div>
+                    <div class="stat-line"><span class="stat-type">Cảm xúc:</span> 15.529 Cảm xúc</div>
+                    <div class="stat-line"><span class="stat-type">SỐ BÀI ĐĂNG:</span> 941 Bài viết</div>
+                </div>
+            </div>
+
+            <div class="why-choose-section">
+                <h3>TAI SAO CHỌN TOÁN MATH?</h3>
+                <div class="why-choose-cards">
+                    <div class="why-card">
+                        <div class="icon-placeholder"><span class="icon-comments"></span></div>
+                        <div>Tương tác thật</div>
+                    </div>
+                    <div class="why-card">
+                        <div class="icon-placeholder"><span class="icon-likes"></span></div>
+                        <div>Ngách giáo dục</div>
+                    </div>
+                    <div class="why-card">
+                        <div class="icon-placeholder"><span class="icon-posts"></span></div>
+                        <div>Hỗ trợ nhiệt tình</div>
+                    </div>
+                    <div class="why-card">
+                        <div class="icon-placeholder"><span class="icon-time"></span></div>
+                        <div>Tối ưu hiệu quả</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="golden-hours-section">
+                <h3>KHUNG GIỜ VÀNG HOẠT ĐỘNG HIỆU QUẢ <span>(Daily Peak Hours)</span></h3>
+
+                <div class="chart-simulation">
+                    <div class="chart-row">
+                        <div class="chart-bar-container">
+                            <div class="chart-bar" style="height: 60%;"></div>
+                        </div>
+                        <div class="chart-bar-container">
+                            <div class="chart-bar highest" style="height: 100%;"></div>
+                        </div>
+                        <div class="chart-bar-container">
+                            <div class="chart-bar high" style="height: 75%;"></div>
+                        </div>
+                        <div class="chart-bar-container">
+                            <div class="chart-bar" style="height: 65%;"></div>
+                        </div>
+                        <div class="chart-bar-container">
+                            <div class="chart-bar high" style="height: 85%;"></div>
+                        </div>
+                        <div class="chart-bar-container">
+                            <div class="chart-bar" style="height: 75%;"></div>
+                        </div>
+                        <div class="chart-bar-container">
+                            <div class="chart-bar" style="height: 70%;"></div>
+                        </div>
+                    </div>
+                    <div class="chart-row chart-label">
+                        <div>T2</div>
+                        <div>T3</div>
+                        <div>T4</div>
+                        <div>T5</div>
+                        <div>T6</div>
+                        <div>T7</div>
+                        <div>CN</div>
+                    </div>
+                </div>
+
+                <div class="golden-hours-highlights">
+                    <div>Khung giờ hoạt động sôi nổi:</div>
+                    <div class="time-periods">
+                        <div class="time-period-box">12h00 - 14h00</div>
+                        <div class="time-period-box">20h00 - 22h00</div>
+                    </div>
+                    <div>Giờ vàng tối ưu nhất (Daily): <span class="highlight-bg">20h00 - 22h00</span></div>
+                    <div>Ngày tương tác đỉnh (Weekly): <span class="highlight-bg">Thứ 3 (đỉnh điểm: 21h00)</span></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="right-column">
+
+            <h2>CÁC GÓI DỊCH VỤ CỤ THỂ <span>(Dành riêng cho Toán Math Group)</span></h2>
+
+            <div class="packages-section">
+                <div class="service-section-title">BẢNG GIÁ ĐĂNG BÀI (POSTING PACKAGES)</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 25%;">Gói Dịch Vụ</th>
+                            <th style="width: 55%;">Chi Tiết Quyền Lợi & Cách Thức Đăng Bài</th>
+                            <th style="width: 20%;">Giá (VNĐ)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Standard Post</strong><br><span style="font-size: 12px; color: #b0c4de;">(Lên
+                                    bài thường)</span></td>
+                            <td>
+                                <span class="tag-admin">Admin đăng hộ</span> hoặc <span class="tag-user">Khách tự
+                                    đăng</span> (Tùy chọn).<br>
+                                - <strong>Nội dung:</strong> Khách gửi Content/Ảnh/Link, duyệt trước khi lên.<br>
+                                - <strong>Hiển thị:</strong> Xuất hiện trên bảng tin group như bài viết bình thường.<br>
+                                - <strong>Hỗ trợ:</strong> Canh đăng vào <strong>Giờ Vàng (20h-22h)</strong> để tối đa
+                                hóa lượt tiếp cận tự nhiên của học sinh.
+                            </td>
+                            <td class="price-cell">800.000</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Premium Post</strong><br><span style="font-size: 12px; color: #b0c4de;">(Ghim
+                                    Đáng Chú Ý)</span></td>
+                            <td>
+                                Bao gồm quyền lợi của bài Standard, <strong>cộng thêm:</strong><br>
+                                - <strong>Ghim bài viết:</strong> Bài được ghim cố định ở phần "Đáng chú ý" (trên cùng
+                                của group) trong <strong>03 ngày</strong>.<br>
+                                - <strong>Lợi ích:</strong> Bất kỳ ai vào group đều sẽ thấy bài viết đầu tiên. Đặc biệt
+                                phù hợp cho các sự kiện ra mắt web, tặng tài liệu, khóa học ngắn hạn.
+                            </td>
+                            <td class="price-cell">1.800.000</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Gói Cover Group</strong><br><span style="font-size: 12px; color: #b0c4de;">(Cho
+                                    Thuê Ảnh Bìa)</span></td>
+                            <td>
+                                <strong>Vị trí Độc Tôn - Hiển thị 100% người dùng.</strong><br>
+                                - <strong>Thay đổi Cover:</strong> Đặt banner/ảnh quảng cáo của đối tác làm Ảnh Bìa
+                                chính thức của group trong <strong>01 tháng (30 ngày)</strong>.<br>
+                                - <strong>Gắn Link:</strong> Link trực tiếp về Website/Fanpage tại phần mô tả (caption)
+                                của ảnh bìa.<br>
+                                - <strong>Tặng kèm:</strong> Miễn phí 02 bài đăng Standard Post trong tháng đó.
+                            </td>
+                            <td class="price-cell">6.000.000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="addons-section">
+                <div class="service-section-title">DỊCH VỤ CỘNG THÊM (EXTRA ADD-ONS)</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Dịch vụ</th>
+                            <th>Chi tiết</th>
+                            <th>Giá (VNĐ)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Hỗ trợ Content</td>
+                            <td>Hỗ trợ tinh chỉnh nội dung bài viết, ảnh cơ bản cho phù hợp với insight, giọng văn thân
+                                thiện với học sinh 2k6/2k7 trong group.</td>
+                            <td class="price-cell">300.000</td>
+                        </tr>
+                        <tr>
+                            <td>Livestream</td>
+                            <td>Gắn link đăng ký hoặc dành 5-10 phút PR trực tiếp trong luồng livestream có sẵn của
+                                Admin/Group (nếu có).</td>
+                            <td class="price-cell">Liên hệ</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="discount-section">
+                <div class="highlight-text">CHIẾT KHẤU ĐẶC BIỆT:</div>
+                <div style="font-size: 14px; margin-top: 5px; color: var(--text-muted);">Giảm 10% tổng hóa đơn cho các
+                    hợp đồng booking từ 3 tháng liên tiếp hoặc gói số lượng lớn.</div>
+            </div>
+
+            <div class="colab-section">
+                <div class="colab-icon"><span class="icon-colab"></span></div>
+                <div class="colab-text">
+                    <h4>HỖ TRỢ KẾT NỐI COLAB & ĐỐI TÁC</h4>
+                    <p>Nếu bạn muốn chiến dịch (VD: Ra mắt web học tập) bùng nổ hơn, chúng tôi hỗ trợ kết nối booking
+                        chéo với các group giáo dục lớn khác (như XGR) với chi phí tối ưu nhất.</p>
+                </div>
+            </div>
+
+            <div class="contact-section">
+                <div class="rules-card">
+                    <h3>QUY ĐỊNH CHUNG:</h3>
+                    <ul>
+                        <li><strong>Thanh toán 100%</strong> phí dịch vụ trước khi lên bài/lên cover.</li>
+                        <li>Nội dung bài viết, banner phải được Admin <strong>kiểm duyệt trước</strong>.</li>
+                        <li>Chúng tôi từ chối các nội dung: Game bài, tiền ảo, thông tin sai lệch hoặc không phù hợp với
+                            lứa tuổi học sinh.</li>
+                    </ul>
+                </div>
+                <div class="booking-contact-card">
+                    <h4>LIÊN HỆ ĐẶT BOOKING:</h4>
+                    <div>Zalo: 09xx xxx xxx</div>
+                    <div>Facebook: fb.com/tson295</div>
+                    <div>Email: nguyenvithaison2006@gmail.com</div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
