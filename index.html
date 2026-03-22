@@ -335,7 +335,6 @@
             width: 100%;
             border-collapse: collapse;
             font-size: 13px;
-            /* Giảm font size một chút để chứa nhiều text hơn */
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 12px;
@@ -359,7 +358,6 @@
             border-bottom: 1px solid var(--border-color);
             line-height: 1.6;
             vertical-align: top;
-            /* Căn chữ lên đầu để dễ đọc */
         }
 
         .packages-section table tr:last-child td,
@@ -373,7 +371,6 @@
             font-weight: 700;
             font-size: 16px;
             white-space: nowrap;
-            /* Không xuống dòng cho số tiền */
         }
 
         .service-section-title {
@@ -454,8 +451,12 @@
             line-height: 1.6;
         }
 
+        /* --- CẬP NHẬT CSS CHO PHẦN LIÊN HỆ CÓ ICON --- */
         .booking-contact-card {
             background: linear-gradient(to right, rgba(20, 35, 58, 0.85), rgba(13, 71, 161, 0.2));
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .booking-contact-card h4 {
@@ -464,11 +465,42 @@
             margin-bottom: 15px;
         }
 
-        .booking-contact-card div {
-            margin: 8px 0;
-            color: var(--light-blue);
-            font-weight: 500;
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
         }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--light-blue);
+            /* Màu chữ đồng bộ với theme */
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        /* Hover Effect Facebook */
+        .contact-item.fb-link:hover {
+            color: #1877F2;
+        }
+
+        .contact-item.fb-link:hover svg {
+            fill: #1877F2;
+        }
+
+        /* Hover Effect Email */
+        .contact-item.email-link:hover {
+            color: #EA4335;
+        }
+
+        .contact-item.email-link:hover svg {
+            fill: #EA4335;
+        }
+
+        /* --------------------------------------------- */
 
         .icon-graph::before {
             content: "📈";
@@ -549,7 +581,7 @@
             </div>
 
             <div class="why-choose-section">
-                <h3>TAI SAO CHỌN TOÁN MATH?</h3>
+                <h3>TẠI SAO CHỌN TOÁN MATH?</h3>
                 <div class="why-choose-cards">
                     <div class="why-card">
                         <div class="icon-placeholder"><span class="icon-comments"></span></div>
@@ -623,10 +655,10 @@
 
         <div class="right-column">
 
-            <h2>CÁC GÓI DỊCH VỤ CỤ THỂ <span>(Dành riêng cho Toán Math Group)</span></h2>
+            <h2>CÁC GÓI DỊCH VỤ CỤ THỂ <span></span></h2>
 
             <div class="packages-section">
-                <div class="service-section-title">BẢNG GIÁ ĐĂNG BÀI (POSTING PACKAGES)</div>
+                <div class="service-section-title">BẢNG GIÁ ĐĂNG BÀI</div>
                 <table>
                     <thead>
                         <tr>
@@ -689,12 +721,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <!-- <tr>
                             <td>Hỗ trợ Content</td>
                             <td>Hỗ trợ tinh chỉnh nội dung bài viết, ảnh cơ bản cho phù hợp với insight, giọng văn thân
                                 thiện với học sinh 2k6/2k7 trong group.</td>
                             <td class="price-cell">300.000</td>
-                        </tr>
+                        </tr> -->
                         <tr>
                             <td>Livestream</td>
                             <td>Gắn link đăng ký hoặc dành 5-10 phút PR trực tiếp trong luồng livestream có sẵn của
@@ -710,16 +742,6 @@
                 <div style="font-size: 14px; margin-top: 5px; color: var(--text-muted);">Giảm 10% tổng hóa đơn cho các
                     hợp đồng booking từ 3 tháng liên tiếp hoặc gói số lượng lớn.</div>
             </div>
-
-            <div class="colab-section">
-                <div class="colab-icon"><span class="icon-colab"></span></div>
-                <div class="colab-text">
-                    <h4>HỖ TRỢ KẾT NỐI COLAB & ĐỐI TÁC</h4>
-                    <p>Nếu bạn muốn chiến dịch (VD: Ra mắt web học tập) bùng nổ hơn, chúng tôi hỗ trợ kết nối booking
-                        chéo với các group giáo dục lớn khác (như XGR) với chi phí tối ưu nhất.</p>
-                </div>
-            </div>
-
             <div class="contact-section">
                 <div class="rules-card">
                     <h3>QUY ĐỊNH CHUNG:</h3>
@@ -730,11 +752,29 @@
                             lứa tuổi học sinh.</li>
                     </ul>
                 </div>
+
                 <div class="booking-contact-card">
                     <h4>LIÊN HỆ ĐẶT BOOKING:</h4>
-                    <div>Zalo: 09xx xxx xxx</div>
-                    <div>Facebook: fb.com/tson295</div>
-                    <div>Email: nguyenvithaison2006@gmail.com</div>
+                    <div class="contact-links">
+                        <a href="https://fb.com/tson295" target="_blank" rel="noopener noreferrer"
+                            class="contact-item fb-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"
+                                fill="currentColor">
+                                <path
+                                    d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z" />
+                            </svg>
+                            <span>fb.com/tson295</span>
+                        </a>
+
+                        <a href="mailto:nguyenvithaison2006@gmail.com" class="contact-item email-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"
+                                fill="currentColor">
+                                <path
+                                    d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                            </svg>
+                            <span>nguyenvithaison2006@gmail.com</span>
+                        </a>
+                    </div>
                 </div>
             </div>
 
